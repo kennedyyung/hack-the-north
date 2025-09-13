@@ -40,7 +40,7 @@ export default function Developer() {
           title="Confirmed Events"
           value="7"
           valueColour="text-green-500"
-          note="RSVP'd"
+          note="RSVPd"
           noteColour="text-green-500"
           iconColour="text-green-500"
           iconBackgroundColour="bg-green-100"
