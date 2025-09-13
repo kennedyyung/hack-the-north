@@ -15,16 +15,24 @@ type EmailSummaryProps = {
   export default function EmailSummary({ title, tag, from, icon, note, dueDate, amount }: EmailSummaryProps) {
     return (
         <div className="grid grid-rows-4 rounded-2xl shadow bg-white m-4"> 
-      <div className=" grid grid-cols-7 mx-4">
+      <div className=" grid grid-cols-7 mx-4 items-center">
+        <div className="flex col-span-5">
         {icon && (
-            <div className=" flex items-center justify-self-end self-center w-12 h-12 rounded-full text-lg ">
+            <div className=" flex items-center ">
                 {icon}
             </div>
         )}
 
-        <h1 className="col-start-2 col-span-5 text-md font-medium text-gray-500 flex items-center mx-4">{title}</h1>
-        <p className="col-start-7 text-gray-900 flex items-center mx-4">{tag}</p>
+        <h1 className=" text-md font-semibold flex items-center ml-2 ">{title}</h1>
         </div>
+        <div
+  className={`col-start-6 flex items-center badge-soft badge
+    ${tag === "high" ? "badge-error" : ""}
+    ${tag === "medium" ? "badge-warning" : ""}
+    ${tag === "low" ? "badge-success" : ""}`}
+>
+  {tag}
+</div>        </div>
         
         <div className="row-start-2 flex items-center mx-4">From: {from}</div>
         <div className="row-start-3 mx-4">{note}</div>

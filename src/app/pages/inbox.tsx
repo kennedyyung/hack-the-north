@@ -5,7 +5,7 @@ import EmailSummary from "../components/emailSummary";
 export default function Inbox() {
     return (
       <>
-        <h1>AI-Powered Inbox Categories</h1>
+        <h1 className="text-2xl font-bold mb-2">AI-Powered Inbox Categories</h1>
         <p>
           Your emails are automatically categorized and converted into actionable tasks across finance, shopping, school, work, and development workflows
         </p>
@@ -19,7 +19,7 @@ export default function Inbox() {
             </div>
 
 
-            <EmailSummary title="Tuition payment due" from="UBC" tag="Due" icon={<FontAwesomeIcon icon={faDollarSign} />} note="Your fall semester tuition payment of $2,850 is due by September 15th..."  dueDate="2024-12-19" amount="2341"/>
+            <EmailSummary title="Tuition payment due" from="UBC" tag="medium" icon={<FontAwesomeIcon icon={faDollarSign} />} note="Your fall semester tuition payment of $2,850 is due by September 15th..."  dueDate="2024-12-19" amount="2341"/>
           </div>
           <div className="bg-white border border-gray-300 h-24 rounded-md  ">
           <div className="flex items-center ml-4 mr-2 mt-4">
