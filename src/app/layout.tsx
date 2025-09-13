@@ -32,7 +32,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
       <AppRouterCacheProvider options={{ enableCssLayer: true }}>
         {children}
-        </AppRouterCacheProvider>
+      </AppRouterCacheProvider>
       </body>
     </html>
   );
