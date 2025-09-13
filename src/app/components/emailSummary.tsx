@@ -1,30 +1,46 @@
 import { ReactNode } from "react";
-
+import { faClock } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 type EmailSummaryProps = {
     title: string;
-    value: string | number;
-    note: string;
-    noteColour?: string;
+    tag: string | number;
+    from: string;
     icon?: ReactNode;
-
+    note: string;
+    dueDate?: string;
+    amount: string | number;
   };
 
-  export default function EmailSummary({ title, value, note, noteColour, icon }: EmailSummaryProps) {
+  export default function EmailSummary({ title, tag, from, icon, note, dueDate, amount }: EmailSummaryProps) {
     return (
-      <div className="rounded-2xl shadow bg-white grid grid-cols-7 ">
+        <div className="grid grid-rows-4 rounded-2xl shadow bg-white m-4"> 
+      <div className=" grid grid-cols-7 mx-4">
         {icon && (
-            <div className="mr-4 justify-self-end self-center w-12 h-12 flex rounded-full text-2xl ">
+            <div className=" flex items-center justify-self-end self-center w-12 h-12 rounded-full text-lg ">
                 {icon}
             </div>
         )}
 
-        <h3 className="col-start-2 cols-span-5 text-sm font-medium text-gray-500">{title}</h3>
-        <p className="col-start-7 text-2xl font-bold text-gray-900">{value}</p>
-        <p className={`text-xs ${noteColour}`}>{note}</p>
+        <h1 className="col-start-2 col-span-5 text-md font-medium text-gray-500 flex items-center mx-4">{title}</h1>
+        <p className="col-start-7 text-gray-900 flex items-center mx-4">{tag}</p>
         </div>
         
+        <div className="row-start-2 flex items-center mx-4">From: {from}</div>
+        <div className="row-start-3 mx-4">{note}</div>
+        <div className="row-start-4 flex justify-between items-center mx-4">
+        {dueDate && (
+  <div className="flex items-center gap-2 ">
+    <FontAwesomeIcon icon={faClock} />
+    <p>Due: {dueDate}</p>
+  </div>
+)}
 
+
+            <p>${amount}</p>
+            </div>
+
+        </div>
 
 
     );
