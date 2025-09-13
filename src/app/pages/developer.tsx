@@ -41,7 +41,7 @@ export default function Developer() {
             <p className="text-green-400"> $ warp remind --github</p>
         <p className="text-yellow-400"> Action required: Fix auth security issues in student-portal PR #42</p>
         <p className="text-green-400">2 PRs ready for review in ecommerce-app</p>
-        <p className="text-blue-400">Run 'warp open pr' to handle GitHub tasks without context switching</p>
+        <p className="text-blue-400">Run &apos;warp open pr&apos; to handle GitHub tasks without context switching</p>
         </div>
         <div className="flex mt-4 gap-x-4">
         <div className="bg-gray-700 text-white rounded-sm p-2">&gt;_ Setup Warp Integration</div>

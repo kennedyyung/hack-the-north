@@ -156,7 +156,7 @@ export default function Developer() {
             <FontAwesomeIcon icon={faClipboardList} className="text-blue-500 w-5 h-5" />
                 <h4 className="font-semibold text-gray-800">Dentist Appointment</h4>
                 <span className="ml-auto bg-green-100 text-green-700 text-xs px-2 py-1 rounded-md">
-                tentative
+                confirmed
                 </span>
             </div>
 

@@ -6,7 +6,7 @@ export default function Inbox() {
     return (
       <div className="mt-8">
             <div className="mb-6">
-                <h1 className="text-3xl font-bold text-gray-900 mb-3">AI-Powered Inbox Categories</h1>
+                <h1 className="text-2xl font-bold mb-2">AI-Powered Inbox Categories</h1>
                 <p className="text-gray-600 text-lg">
           Your emails are automatically categorized and converted into actionable tasks across finance, shopping, school, work, and development workflows
         </p>
