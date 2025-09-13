@@ -1,6 +1,6 @@
 ﻿import { TextField, InputAdornment } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBell, faGear, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faBell, faGear, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
 
 export default function NavBar() {
     return (
@@ -32,6 +32,7 @@ export default function NavBar() {
             <div className="flex items-center gap-4 ml-auto">
                 <FontAwesomeIcon icon={faBell} className="text-gray-600 hover:text-gray-800 cursor-pointer" />
                 <FontAwesomeIcon icon={faGear} className="text-gray-600 hover:text-gray-800 cursor-pointer" />
+                <FontAwesomeIcon icon={faUser} className="text-gray-600 hover:text-gray-800 cursor-pointer" />
             </div>
         </div>
     );
