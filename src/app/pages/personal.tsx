@@ -13,7 +13,7 @@ export default function Inbox() {
         AI-powered personal calendar management for your social life.
       </p>
 
-      {/* Top Stats */}
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-8">
         <div className="p-4">
           <OverviewBox
@@ -55,7 +55,7 @@ export default function Inbox() {
         </div>
       </div>
 
-      {/* Smart Email Event Detection Section */}
+
       <div className="bg-purple-50 border border-purple-200 rounded-2xl p-6 space-y-6">
         {/* Header */}
         <div className="flex items-center space-x-2">
@@ -65,9 +65,9 @@ export default function Inbox() {
           </h2>
         </div>
 
-        {/* Three Columns */}
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {/* Social Events */}
+
           <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
             <div className="flex items-center space-x-2 mb-2">
               <FontAwesomeIcon icon={faUserGroup} className="text-pink-500 w-5 h-5" />
@@ -83,7 +83,7 @@ export default function Inbox() {
             </ul>
           </div>
 
-          {/* Appointments */}
+
           <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
             <div className="flex items-center space-x-2 mb-2">
               <FontAwesomeIcon icon={faClipboardList} className="text-blue-500 w-5 h-5" />
@@ -99,7 +99,7 @@ export default function Inbox() {
             </ul>
           </div>
 
-          {/* Reservations */}
+
           <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
             <div className="flex items-center space-x-2 mb-2">
               <FontAwesomeIcon icon={faUtensils} className="text-green-600 w-5 h-5" />
@@ -116,7 +116,7 @@ export default function Inbox() {
           </div>
         </div>
 
-        {/* Call-to-Action */}
+
         <div className="bg-purple-600 text-white rounded-xl p-4 flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0">
           <div className="flex items-center space-x-2">
             <FontAwesomeIcon icon={faCalendar} className="w-5 h-5" />

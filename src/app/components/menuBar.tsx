@@ -16,18 +16,19 @@ export default function MenuBar({ onSelectPage }: MenuBarProps) {
   };
 
   return (
-    <nav className="mt-4 px-4 flex bg-gray-100 rounded-full justify-evenly w-3/4 ">
-      {pages.map((page) => (
-        <button
-          key={page}
-          onClick={() => handleClick(page)}
-          className={`px-10 py-2 rounded-full transition-colors ${
-            selectedPage === page ? "bg-blue-500 text-white" : "bg-gray-100 text-gray-700"
-          }`}
-        >
-          {page}
-        </button>
-      ))}
+    <nav className="mt-6 mb-10 w-full flex justify-center">
+      <div className="flex w-full max-w-4xl bg-gray-100 rounded-full p-1 shadow-sm justify-between">
+        {pages.map((page) => (
+          <button
+            key={page}
+            onClick={() => handleClick(page)}
+            className={`px-6 py-2 flex-1 rounded-full transition-colors text-sm font-medium text-center
+              ${selectedPage === page ? "bg-blue-500 text-white shadow-md" : "bg-gray-100 text-gray-700"}`}
+          >
+            {page}
+          </button>
+        ))}
+      </div>
     </nav>
   );
 }

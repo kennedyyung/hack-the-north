@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import Image from "next/image"; 
 import NavBar from "./components/navbar";
 import Overview from "./components/overview";
 import MenuBar from "./components/menuBar";
@@ -14,8 +14,9 @@ import Personal from "./pages/personal";
 export default function Home() {
   const [activePage, setActivePage] = useState<string | null>(null);
   return (
-    <>
+    <div className="min-h-screen bg-gray-50">
     <NavBar/>
+    <div className="px-8 py-1 max-w-14xl mx-auto">
     <Overview/>
     <MenuBar onSelectPage={setActivePage} />
 
@@ -26,7 +27,7 @@ export default function Home() {
 {activePage === "Personal" && <Personal />}
 {activePage === "Shopping" && <Shopping />}
 {activePage === "Developer" && <Developer />}
-
-    </>
+  </div>
+</div>
   );
 }
