@@ -10,9 +10,8 @@ import Financial from "./pages/financial";
 import Shopping from "./pages/shopping";
 import Developer from "./pages/developer";
 import Personal from "./pages/personal";
-
 export default function Home() {
-  const [activePage, setActivePage] = useState<string | null>(null);
+  const [activePage, setActivePage] = useState<string>("Inbox");
   return (
     <div className="min-h-screen bg-gray-50">
     <NavBar/>
@@ -28,6 +27,7 @@ export default function Home() {
 {activePage === "Shopping" && <Shopping />}
 {activePage === "Developer" && <Developer />}
   </div>
+
 </div>
   );
 }
