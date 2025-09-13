@@ -1,17 +1,18 @@
 import { faEnvelope, faClock, faCalendar } from "@fortawesome/free-regular-svg-icons";
 import { faUserGroup, faClipboardList, faUtensils } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import OverviewBox from "../components/overviewBox";
 
-export default function Inbox() {
+export default function Developer() {
   return (
-    <div className="max-w-6xl mx-auto px-6">
+    <>
       <h1 className="text-2xl font-bold mb-2">Personal Calendar Dashboard</h1>
       <p className="text-gray-600 mb-6">
         Social events, appointments, and reservations detected from your emails.
         AI-powered personal calendar management for your social life.
       </p>
+
+        
 
       {/* Overview Section */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-8">
@@ -47,7 +48,7 @@ export default function Inbox() {
         />
       </div>
 
-      {/* Category Section */}
+      {/* Overview Section */}
       <div className="bg-purple-50 border border-purple-200 rounded-2xl p-6 space-y-6 mb-8">
         <div className="flex items-center space-x-2">
           <FontAwesomeIcon icon={faCalendar} className="text-purple-600 w-5 h-5" />
@@ -55,7 +56,6 @@ export default function Inbox() {
             Smart Email Event Detection
           </h2>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
             <div className="flex items-center space-x-2 mb-2">
@@ -209,6 +209,6 @@ export default function Inbox() {
           </button>
         </div>
       </div>
-    </div>
+    </>
   );
 }
