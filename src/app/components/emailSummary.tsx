@@ -9,12 +9,12 @@ type EmailSummaryProps = {
     icon?: ReactNode;
     note: string;
     dueDate?: string;
-    amount: string | number;
+    amount?: string | number;
   };
 
   export default function EmailSummary({ title, tag, from, icon, note, dueDate, amount }: EmailSummaryProps) {
     return (
-        <div className="grid grid-rows-4 rounded-2xl shadow bg-white m-4"> 
+        <div className="grid grid-rows-4 rounded-2xl bg-white m-4 border border-gray-200 shadow-none"> 
       <div className=" grid grid-cols-7 mx-4 items-center">
         <div className="flex col-span-5">
         {icon && (
@@ -32,20 +32,21 @@ type EmailSummaryProps = {
     ${tag === "low" ? "badge-success" : ""}`}
 >
   {tag}
-</div>        </div>
-        
-        <div className="row-start-2 flex items-center mx-4">From: {from}</div>
-        <div className="row-start-3 mx-4">{note}</div>
-        <div className="row-start-4 flex justify-between items-center mx-4">
-        {dueDate && (
-  <div className="flex items-center gap-2 ">
-    <FontAwesomeIcon icon={faClock} />
-    <p>Due: {dueDate}</p>
-  </div>
-)}
+    </div>        </div>
+            
+            <div className="row-start-2 flex items-center mx-4">From: {from}</div>
+            <div className="row-start-3 mx-4">{note}</div>
+            <div className="row-start-4 flex justify-between items-center mx-4">
+            {dueDate && (
+      <div className="flex items-center gap-2 ">
+        <FontAwesomeIcon icon={faClock} />
+        <p>Due: {dueDate}</p>
+      </div>
+    )}
 
 
-            <p>${amount}</p>
+            {amount && <p>${amount}</p>}
+
             </div>
 
         </div>
