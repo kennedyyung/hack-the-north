@@ -31,7 +31,7 @@ export default function Shopping() {
           <FontAwesomeIcon icon={faStore} className="text-green-600 w-5 h-5" />
           <h2 className="text-green-600 font-semibold text-lg">
 Bridge Inbox + Commerce with Shopify          </h2>
-<p>We've detected order confirmations from 4 different stores in your inbox. Connect these stores to your Shopify merchant dashboard for unified order management and analytics.</p>
+<p>We&apos;ve detected order confirmations from 4 different stores in your inbox. Connect these stores to your Shopify merchant dashboard for unified order management and analytics.</p>
           
         </div>
         </div>
