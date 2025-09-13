@@ -1,12 +1,30 @@
+"use client";
 import Image from "next/image";
 import NavBar from "./components/navbar";
 import Overview from "./components/overview";
+import MenuBar from "./components/menuBar";
+import { useState } from "react";
+import Inbox from "./pages/inbox";
+import Calendar from "./pages/calendar";
+import Financial from "./pages/financial";
+import Shopping from "./pages/shopping";
+import Developer from "./pages/developer";
 
 export default function Home() {
+  const [activePage, setActivePage] = useState<string | null>(null);
   return (
     <>
     <NavBar/>
     <Overview/>
+    <MenuBar onSelectPage={setActivePage} />
+
+{/* Conditional rendering based on activePage */}
+{activePage === "Inbox" && <Inbox />}
+{activePage === "Calendar" && <Calendar />}
+{activePage === "Financial" && <Financial />}
+{activePage === "Shopping" && <Shopping />}
+{activePage === "Developer" && <Developer />}
+
     </>
   );
 }
