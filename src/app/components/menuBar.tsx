@@ -1,15 +1,33 @@
+
+import { useState } from "react";
+
 type MenuBarProps = {
-    onSelectPage: (page: string) => void;
+  onSelectPage: (page: string) => void;
+};
+
+export default function MenuBar({ onSelectPage }: MenuBarProps) {
+  const [selectedPage, setSelectedPage] = useState("Inbox");
+
+  const pages = ["Inbox", "Calendar", "Financial", "Personal", "Shopping", "Developer"];
+
+  const handleClick = (page: string) => {
+    setSelectedPage(page);
+    onSelectPage(page);
   };
-  
-  export default function MenuBar({ onSelectPage }: MenuBarProps) {
-    return (
-      <nav className="p-4 flex gap-4 bg-gray-100">
-        <button onClick={() => onSelectPage("Inbox")}>Inbox</button>
-        <button onClick={() => onSelectPage("Calendar")}>Calendar</button>
-        <button onClick={() => onSelectPage("Financial")}>Financial</button>
-        <button onClick={() => onSelectPage("Shopping")}>Shopping</button>
-        <button onClick={() => onSelectPage("Developer")}>Developer</button>
-      </nav>
-    );
-  }
+
+  return (
+    <nav className="mt-4 px-4 flex bg-gray-100 rounded-full justify-evenly w-3/4 ">
+      {pages.map((page) => (
+        <button
+          key={page}
+          onClick={() => handleClick(page)}
+          className={`px-10 py-2 rounded-full transition-colors ${
+            selectedPage === page ? "bg-blue-500 text-white" : "bg-gray-100 text-gray-700"
+          }`}
+        >
+          {page}
+        </button>
+      ))}
+    </nav>
+  );
+}

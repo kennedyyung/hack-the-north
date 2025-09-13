@@ -9,6 +9,7 @@ import Calendar from "./pages/calendar";
 import Financial from "./pages/financial";
 import Shopping from "./pages/shopping";
 import Developer from "./pages/developer";
+import Personal from "./pages/personal";
 
 export default function Home() {
   const [activePage, setActivePage] = useState<string | null>(null);
@@ -22,6 +23,7 @@ export default function Home() {
 {activePage === "Inbox" && <Inbox />}
 {activePage === "Calendar" && <Calendar />}
 {activePage === "Financial" && <Financial />}
+{activePage === "Personal" && <Personal />}
 {activePage === "Shopping" && <Shopping />}
 {activePage === "Developer" && <Developer />}
 
