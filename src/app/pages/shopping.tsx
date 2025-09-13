@@ -16,13 +16,25 @@ export default function Shopping() {
             </div>
         </div>
 
-      <div className="bg-green-50 border border-green-600 rounded-2xl p-6 space-y-6">
+      <div className="bg-green-10 border border-green-600 rounded-2xl p-6 space-y-6">
         {/* Header */}
-        <div className="flex items-center space-x-2">
+        <div className="flex-col items-center space-x-2">
+          <div className="flex items-center">
           <FontAwesomeIcon icon={faStore} className="text-green-600 w-5 h-5" />
           <h2 className="text-green-600 font-semibold text-lg">
             Smart Commerce Integration
           </h2>
+            </div>
+          <div className="bg-green-50 border border-green-600 rounded-2xl p-6 space-y-6">
+        {/* Header */}
+        <div className="flex-cols items-center space-x-2">
+          <FontAwesomeIcon icon={faStore} className="text-green-600 w-5 h-5" />
+          <h2 className="text-green-600 font-semibold text-lg">
+Bridge Inbox + Commerce with Shopify          </h2>
+<p>We've detected order confirmations from 4 different stores in your inbox. Connect these stores to your Shopify merchant dashboard for unified order management and analytics.</p>
+          
+        </div>
+        </div>
         </div>
         </div>
                 </>
