@@ -1,5 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faStore, faBoxOpen } from "@fortawesome/free-solid-svg-icons"
+import ShopifySummary from "../components/shopifySummary"
+
 export default function Shopping() {
     return (
         <>
@@ -8,6 +10,10 @@ export default function Shopping() {
           We bridge inbox + commerce, turning email receipts into a smart shopping dashboard. Track orders, deliveries, and connect to Shopify merchant dashbaords automatically.
         </p>
 
+
+
+        <div className="grid grid-cols-2">
+      <div className="outline-solid outline-grey-50 rounded-md p-4 m-4  ">
         <div className="p-4 rounded-2xl shadow bg-white grid grid-rows-2 w-76 mx-4">
             <h1>Total Orders</h1>
             <div className="flex">
@@ -37,6 +43,14 @@ Bridge Inbox + Commerce with Shopify          </h2>
         </div>
         </div>
         </div>
+        <ShopifySummary title="TechGear Pro" status="shipped" amount="189.99" items="headphones, ipod, test" ordered="2025-12-19" expected="2026-01-12" orderNo="1002"/>
+        <ShopifySummary title="TechGear Pro" status="shipped" amount="189.99" items="headphones, ipod, test" ordered="2025-12-19" expected="2026-01-12" orderNo="1002"/>
+
+        <ShopifySummary title="TechGear Pro" status="shipped" amount="189.99" items="headphones, ipod, test" ordered="2025-12-19" expected="2026-01-12" orderNo="1002"/>
+
+        <ShopifySummary title="TechGear Pro" status="shipped" amount="189.99" items="headphones, ipod, test" ordered="2025-12-19" expected="2026-01-12" orderNo="1002"/>
+
+        </div></div>
                 </>
     )
 }
