@@ -1,44 +1,17 @@
 ﻿import OverviewBox from "./overviewBox"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faClock, faChartLine, faCalendar } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowTrendUp } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faClock, faCalendar } from "@fortawesome/free-regular-svg-icons"
 
 export default function Overview() {
     return (
-        <>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-        <OverviewBox 
-            title="Emails Processed" 
-            value="247" 
-            note="+12 today" 
-            iconColour="text-blue-600" 
-            iconBackgroundColour="bg-blue-100"
-            icon={<FontAwesomeIcon icon={faEnvelope} />}
-        />
-        <OverviewBox 
-            title="Urgent Tasks" 
-            value="8" 
-            note="Need attention" 
-            iconColour="text-red-600" 
-            iconBackgroundColour="bg-red-100"
-            icon={<FontAwesomeIcon icon={faClock} />}
-        />
-        <OverviewBox 
-            title="Financial Insights" 
-            value="12" 
-            note="Opportunities" 
-            iconColour="text-blue-600" 
-            iconBackgroundColour="bg-blue-100"
-            icon={<FontAwesomeIcon icon={faChartLine} />}
-        />
-        <OverviewBox 
-            title="Active Tracking" 
-            value="23" 
-            note="Orders + PRs" 
-            iconColour="text-purple-600" 
-            iconBackgroundColour="bg-purple-100"
-            icon={<FontAwesomeIcon icon={faCalendar} />}
-        />
+        <div className="max-w-6xl mx-auto px-8">
+            <div className="grid grid-cols-4 gap-6 mt-8">
+            <OverviewBox title="Emails Processed" value="247" valueColour = "text-green-500" note="+12 today" noteColour = "text-green-500" iconColour="text-green-500" iconBackgroundColour="bg-green-100"icon={<FontAwesomeIcon icon={faEnvelope} />}/>
+            <OverviewBox title="Urgent Tasks" value="8" valueColour = "text-red-500" note="Critical" noteColour = "text-red-500" iconColour="text-red-500" iconBackgroundColour="bg-red-100"icon={<FontAwesomeIcon icon={faClock} />}/>
+            <OverviewBox title="Financial Insights" value="12" valueColour = "text-blue-500" note="Opportunities" noteColour = "text-blue-500" iconColour="text-blue-500" iconBackgroundColour="bg-blue-100"icon={<FontAwesomeIcon icon={faArrowTrendUp} />}/>
+            <OverviewBox title="Active Tracking" value="23" valueColour = "text-purple-500" note="Orders" noteColour = "text-purple-500" iconColour="text-purple-500" iconBackgroundColour="bg-purple-100"icon={<FontAwesomeIcon icon={faCalendar} />}/>
+            </div>
         </div>
-        </>
     )
-}
+}  
