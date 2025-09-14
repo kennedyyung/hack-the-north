@@ -9,7 +9,7 @@ export default function Calendar() {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
   // Sample data pull from an API
-  // Dates use zero based months so jan will be 0, oct will be 9
+  // Dates use zero based months so jan will be 0, sept will be 8
   const events: CalendarEvent[] = useMemo(() => [
     {
       id: '1',
@@ -84,30 +84,28 @@ export default function Calendar() {
       </p>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-6 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-          {/* Left Column - Urgent and Upcoming Deadlines */}
-          <div className="lg:col-span-1 space-y-6">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        {/* Left Column */}
+        <div className="lg:col-span-3 space-y-6">
             <UrgentDeadlines events={events} />
             <UpcomingDeadlines events={events} />
-          </div>
+        </div>
 
-          {/* Middle Column - Calendar */}
-          <div className="lg:col-span-2">
+        {/* Middle Column - Calendar */}
+        <div className="lg:col-span-6">
             <CalendarGrid 
-              events={events} 
-              onDateSelect={setSelectedDate} 
-              selectedDate={selectedDate}
+            events={events} 
+            onDateSelect={setSelectedDate} 
+            selectedDate={selectedDate}
             />
-          </div>
+        </div>
 
-          {/* Right Column - Day Details and Legend */}
-          <div className="lg:col-span-1 space-y-6">
+        {/* Right Column */}
+        <div className="lg:col-span-3 space-y-6">
             <DayDetails selectedDate={selectedDate} events={events} />
             <Legend />
-          </div>
         </div>
-      </div>
+    </div>
     </>
   );
 }
