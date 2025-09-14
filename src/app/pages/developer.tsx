@@ -136,7 +136,7 @@ export default function Developer() {
         <div className="rounded-md outline-solid outline-gray-300 pl-2 mt-4 py-4">
             <div className="flex items-center">
             <FontAwesomeIcon icon={faCodePullRequest} className="text-blue-500 text-sm"/> 
-            <p>Review requested on "feat: Add user auth"</p>
+            <p>Review requested on feat: Add user auth</p>
             </div>
             <p className="text-xs text-gray-400">student-portal • Review requested</p>
             <p className="text-xs text-gray-400">9/11/2024, 10:30:00 AM • GitHub &lt; noreply@github.com &gt; </p>
@@ -144,7 +144,7 @@ export default function Developer() {
         <div className="rounded-md outline-solid outline-gray-300 pl-2 mt-4 py-4">
             <div className="flex items-center">
             <FontAwesomeIcon icon={faCircleExclamation} className="text-red-500 text-sm"/> 
-            <p>Issue assigned: "Database connection timeout"</p>
+            <p>Issue assigned: Database connection timeout</p>
             </div>
             <p className="text-xs text-gray-400">student-portal • Review requested</p>
             <p className="text-xs text-gray-400">9/11/2024, 10:30:00 AM • GitHub &lt; noreply@github.com &gt; </p>
@@ -152,7 +152,7 @@ export default function Developer() {
         <div className="rounded-md outline-solid outline-gray-300 pl-2 mt-4 py-4">
             <div className="flex items-center">
             <FontAwesomeIcon icon={faMessage} className="text-green-500 text-sm"/> 
-            <p>You were mentioned in "API Rate Limiting Discussion"</p>
+            <p>You were mentioned in API Rate Limiting Discussion</p>
             </div>
             <p className="text-xs text-gray-400">student-portal • Review requested</p>
             <p className="text-xs text-gray-400">9/11/2024, 10:30:00 AM • GitHub &lt; noreply@github.com &gt; </p>

@@ -109,6 +109,7 @@ export default function Financial() {
 
           // Now TypeScript knows strategy is safe
           combined[point.date][p.strategy] = point.value;
+
         });
       });
 
