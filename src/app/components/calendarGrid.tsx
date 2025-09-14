@@ -8,6 +8,7 @@ export type CalendarEvent = {
   time?: string;
   description?: string;
   priority?: 'high' | 'medium' | 'low';
+  emailData?: any; // Store original email data for popup
 };
 
 type CalendarDay = {
@@ -23,9 +24,10 @@ type CalendarGridProps = {
   events?: CalendarEvent[];
   onDateSelect?: (date: Date | null) => void;
   selectedDate?: Date | null;
+  onEventClick?: (event: CalendarEvent, mouseEvent: React.MouseEvent) => void;
 };
 
-export default function CalendarGrid({ events = [], onDateSelect, selectedDate }: CalendarGridProps) {
+export default function CalendarGrid({ events = [], onDateSelect, selectedDate, onEventClick }: CalendarGridProps) {
   const [currentDate, setCurrentDate] = useState(new Date());
 
   const colorMap: Record<string, string> = {
@@ -172,10 +174,15 @@ export default function CalendarGrid({ events = [], onDateSelect, selectedDate }
             {day.events.length > 0 && (
               <div className="flex justify-center mt-1 space-x-1">
                 {day.events.slice(0, 3).map((event, i) => (
-                  <span
+                  <button
                     key={i}
-                    className={`w-2 h-2 rounded-full ${colorMap[event.type]}`}
-                  ></span>
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onEventClick?.(event, e);
+                    }}
+                    className={`w-2 h-2 rounded-full ${colorMap[event.type]} hover:scale-125 transition-transform cursor-pointer`}
+                    title={event.title}
+                  ></button>
                 ))}
                 {day.events.length > 3 && (
                   <span className="text-xs text-gray-500">+{day.events.length - 3}</span>
