@@ -24,7 +24,7 @@ export default function Home() {
 {activePage === "Calendar" && <Calendar />}
 {activePage === "Financial" && <Financial />}
 {activePage === "Personal" && <Personal />}
-{activePage === "Shopping" && <Shopping />}
+{activePage === "Shopify" && <Shopping />}
 {activePage === "Developer" && <Developer />}
   </div>
 

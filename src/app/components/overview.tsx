@@ -108,7 +108,7 @@ export default function Overview() {
           title="Active Tracking" 
           value={activeTracking.toString()} 
           valueColour="text-purple-500" 
-          note="Shopping orders" 
+          note="Shopify orders" 
           noteColour="text-purple-500" 
           iconColour="text-purple-500" 
           iconBackgroundColour="bg-purple-100"

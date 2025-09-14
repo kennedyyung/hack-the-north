@@ -3,7 +3,7 @@ import { useState, useMemo, useCallback } from "react";
 export type CalendarEvent = {
   id: string;
   title: string;
-  type: 'work' | 'school' | 'personal' | 'deadline' | 'shopping' | 'family';
+  type: 'work' | 'school' | 'personal' | 'deadline' | 'shopify' | 'family';
   date: Date;
   time?: string;
   description?: string;
@@ -35,7 +35,7 @@ export default function CalendarGrid({ events = [], onDateSelect, selectedDate, 
     school: "bg-purple-500",
     personal: "bg-pink-500",
     deadline: "bg-red-500",
-    shopping: "bg-green-500",
+    shopify: "bg-green-500",
     family: "bg-yellow-500",
   };
 

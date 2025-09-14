@@ -68,7 +68,7 @@ export default function Calendar() {
         return {
           id: `email-${index}`,
           title: email.subject,
-          type: email.category === "shopify" ? "shopping" : email.category as any,
+          type: email.category as any,
           date: dueDate,
           time: dueDate.toTimeString().slice(0, 5),
           description: email.summary,
