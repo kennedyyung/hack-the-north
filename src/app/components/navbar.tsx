@@ -5,7 +5,7 @@ import { faBell, faGear, faSearch, faUser } from "@fortawesome/free-solid-svg-ic
 export default function NavBar() {
     return (
         <div className="p-4 flex items-center gap-4 bg-gray-100">
-            <h1 className="text-xl font-bold">Life Clarity</h1>
+            <h1 className="text-xl font-bold">Klarity</h1>
 
             <div className="flex-grow flex justify-center">
                 <TextField
