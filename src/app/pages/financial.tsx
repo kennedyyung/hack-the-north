@@ -104,7 +104,11 @@ export default function Financial() {
       result.results.forEach((p: any) => {
         p.growth_trend.forEach((point: any) => {
           if (!combined[point.date]) combined[point.date] = {};
-          combined[point.date][p.strategy] = point.value;
+          if (p.strategy == "balanced") {
+            combined[point.date].balanced = point.value;
+          } else {
+            combined[point.date].aggressive_growth = point.value;
+          }
         });
       });
 
