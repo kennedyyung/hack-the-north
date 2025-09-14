@@ -1,6 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBoxOpen, faStore, faDollarSign, faTruck, faShoppingCart, faClock, faArrowRight} from "@fortawesome/free-solid-svg-icons";
 import OverviewBox from "../components/overviewBox";
+import ShopifySummary from "../components/shopifySummary";
+import StoreIntegration from "../components/storeIntegration";
 
 export default function Shopping() {
   return (
@@ -63,7 +65,7 @@ export default function Shopping() {
           </h2>
         </div>
         <p className="text-sm text-gray-700">
-          We've detected order confirmations from 4 different stores in your inbox. Connect these stores to your Shopify merchant dashboard for unified order management and analytics.
+          We&apos;ve detected order confirmations from 4 different stores in your inbox. Connect these stores to your Shopify merchant dashboard for unified order management and analytics.
         </p>
         <div className="flex space-x-4">
           <button className="px-4 py-2 text-sm rounded-md bg-green-600 text-white hover:bg-green-700">
@@ -83,47 +85,7 @@ export default function Shopping() {
             <FontAwesomeIcon icon={faShoppingCart} className="text-green-600 w-5 h-5" />
             <h2 className="text-green-700 font-semibold text-lg">Recent Orders</h2>
           </div>
-
-          {[
-            {
-              store: "TechGear Pro",
-              status: "shipped",
-              statusColor: "green",
-              amount: "$189.89",
-              order: "#1004",
-              package: "TECH23456M",
-              date: "09/04/2023 11:04 AM",
-              email: "techgearpro@store.com",
-            },
-            {
-              store: "Campus Clothing",
-              status: "processing",
-              statusColor: "yellow",
-              amount: "$140.50",
-              order: "#1003",
-              package: "CAMP34567N",
-              date: "09/04/2023 10:45 AM",
-              email: "campusclothing@store.com",
-            },
-          ].map((order, idx) => (
-            <div key={idx} className="bg-gray-50 rounded-xl p-4 border border-gray-100">
-              <div className="flex items-center space-x-2">
-                <h4 className="font-semibold text-gray-800">{order.store}</h4>
-                <span
-                  className={`ml-auto bg-${order.statusColor}-100 text-${order.statusColor}-700 text-xs px-2 py-1 rounded-md`}
-                >
-                  {order.status}
-                </span>
-              </div>
-              <p className="text-sm text-gray-700 mt-1">
-                Order {order.order} — {order.amount}
-              </p>
-              <p className="text-sm text-gray-600">Student Package: {order.package}</p>
-              <p className="text-xs text-gray-400">
-                {order.date} — {order.email}
-              </p>
-            </div>
-          ))}
+          <ShopifySummary title="Test" status="processing" orderNo="1202" items="keys, headphones, socks" ordered="2025-01-23" expected="2025-02-15" amount="246.05"/>
         </div>
 
         {/* Store Integrations Section */}
@@ -132,60 +94,14 @@ export default function Shopping() {
             <FontAwesomeIcon icon={faStore} className="text-green-600 w-5 h-5" />
             <h2 className="text-green-700 font-semibold text-lg">Store Integrations</h2>
           </div>
+<StoreIntegration title="Testing name" orders="10" website="Testing website" revenue="200" connected="connected" />
+<StoreIntegration title="Testing name" orders="2" website="Testing website" revenue="150.15" connected="not connected"/>
+<StoreIntegration title="Testing name" orders="2" website="Testing website" revenue="150.15" connected="not connected"/>
+<StoreIntegration title="Testing name" orders="2" website="Testing website" revenue="150.15" connected="not connected"/>
+<StoreIntegration title="Testing name" orders="2" website="Testing website" revenue="150.15" connected="not connected"/>
 
-          {[
-            {
-              name: "TechGear Pro",
-              url: "techgearpro.myshopify.com",
-              orders: 15,
-              revenue: "$2840.50",
-              connected: true,
-            },
-            {
-              name: "Campus Clothing",
-              url: "campus-clothing.myshopify.com",
-              orders: 8,
-              revenue: "$640.00",
-              connected: false,
-            }
-          ].map((store, idx) => (
-            <div key={idx} className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 space-y-4">
-              <h3 className="text-lg font-semibold text-gray-800">{store.name}</h3>
-              <p className="text-sm text-gray-600">{store.url}</p>
+         
 
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-gray-100 rounded-lg p-4 text-center">
-                  <p className="text-sm text-gray-500">Orders</p>
-                  <p className="text-2xl font-bold text-gray-800">{store.orders}</p>
-                </div>
-                <div className="bg-gray-100 rounded-lg p-4 text-center">
-                  <p className="text-sm text-gray-500">Revenue</p>
-                  <p className="text-2xl font-bold text-gray-800">{store.revenue}</p>
-                </div>
-              </div>
-
-              <div className="flex justify-between items-center pt-2">
-                <span
-                  className={`text-sm font-medium ${
-                    store.connected ? "text-green-600" : "text-red-500"
-                  }`}
-                >
-                  {store.connected ? "Connected" : "Not Connected"}
-                </span>
-                {store.connected ? (
-                  <button className="px-4 py-2 text-sm rounded-md border border-green-600 text-green-600 hover:bg-green-100">
-                    View Dashboard
-                  </button>
-                ) : (
-                  <a href = "https://accounts.shopify.com/signup"> 
-                    <button className="px-4 py-2 text-sm rounded-md bg-red-500 text-white hover:bg-red-600">
-                      Connect Store
-                    </button>
-                  </a>
-                )}
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </>
