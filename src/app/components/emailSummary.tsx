@@ -14,7 +14,7 @@ type EmailSummaryProps = {
 
   export default function EmailSummary({ title, tag, from, icon, note, dueDate, amount }: EmailSummaryProps) {
     return (
-        <div className="grid grid-rows-4 rounded-2xl bg-white m-4 border border-gray-200 shadow-none"> 
+        <div className="grid rounded-2xl bg-white m-4 border border-gray-200 shadow-none mt-4"> 
       <div className=" grid grid-cols-7 mx-4 items-center">
         <div className="flex col-span-5">
         {icon && (
