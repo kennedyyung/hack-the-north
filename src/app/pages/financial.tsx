@@ -28,7 +28,7 @@ export default function Financial() {
   // ✅ Register team with name + email
   async function handleRegisterTeam() {
     try {
-      const teamName = "Klarity_Teasdsddasmm";
+      const teamName = "Klarity_Team";
       const contactEmail = "contact@klarity.work";
       const token = await registerTeam(teamName, contactEmail);
       localStorage.setItem("rbc_token", token);

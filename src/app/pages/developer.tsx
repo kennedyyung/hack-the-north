@@ -39,7 +39,7 @@ export default function Developer() {
         <div className="bg-linear-to-bl from-gray-800 to-gray-900 rounded-md p-4" >
             <p className="text-gray-400"># Smart reminders in your terminal</p>
             <p className="text-green-400"> $ warp remind --github</p>
-        <p className="text-yellow-400"> Action required: Fix auth security issues in student-portal PR #42</p>
+        <p className="text-yellow-400"> ⚠️ Action required: Fix auth security issues in student-portal PR #42</p>
         <p className="text-green-400">2 PRs ready for review in ecommerce-app</p>
         <p className="text-blue-400">Run &apos;warp open pr&apos; to handle GitHub tasks without context switching</p>
         </div>
@@ -56,7 +56,7 @@ export default function Developer() {
         <h1 className="text-2xl text-gray-500">GitHub Pull Requests</h1>
 
         </div>
-        <div className="rounded-md outline-solid bg-red-50 outline-red-200 pl-2 mt-4 py-4">
+        <div className="rounded-md outline-solid bg-red-50 outline-red-200 pl-2 mt-4 py-2">
             <p className="text-sm text-red-500">HIGH</p>
             <p className="text-sm">feat: Add user authentication system</p>
             <p className="text-xs text-gray-500">student-portal - by alex-dev</p>
@@ -73,7 +73,7 @@ export default function Developer() {
             </div>
             
             <div className="border-t-2 border-gray-500 w-7/8 items-center my-2"></div>
-            <p className="text-xs text-gray-500">GitHub notification from notifications@github.com</p>
+            <p className="text-xs text-gray-500 mb-2">GitHub notification from notifications@github.com</p>
             <div className="flex gap-x-4">
                 <div className="outline-solid outline-gray-200 flex rounded-md bg-white items-center px-2">
                 <FontAwesomeIcon icon={faFileExport} className="text-xs"/> 
@@ -82,7 +82,7 @@ export default function Developer() {
                 <div className="outline-solid outline-gray-200 text-xs rounded-md bg-black text-white p-1 px-2 text-semibold">&gt;_ Handle in Warp</div>
             </div>
         </div>
-        <div className="rounded-md outline-solid bg-red-50 outline-red-200 pl-2 mt-4">
+        <div className="rounded-md outline-solid bg-red-50 outline-red-200 pl-2 mt-4 py-2">
             <p className="text-sm text-red-500">HIGH</p>
             <p className="text-sm">feat: Add user authentication system</p>
             <p className="text-xs text-gray-500">student-portal - by alex-dev</p>
@@ -99,7 +99,7 @@ export default function Developer() {
             </div>
             
             <div className="border-t-2 border-gray-500 w-7/8 items-center my-2"></div>
-            <p className="text-xs text-gray-500">GitHub notification from notifications@github.com</p>
+            <p className="text-xs text-gray-500 mb-2">GitHub notification from notifications@github.com</p>
             <div className="flex gap-x-4">
                 <div className="outline-solid outline-gray-200 flex rounded-md bg-white items-center px-2">
                 <FontAwesomeIcon icon={faFileExport} className="text-xs"/> 
@@ -108,7 +108,7 @@ export default function Developer() {
                 <div className="outline-solid outline-gray-200 text-xs rounded-md bg-black text-white p-1 px-2 text-semibold">&gt;_ Handle in Warp</div>
             </div>
         </div>
-        <div className="rounded-md outline-solid outline-gray-200 pl-2 mt-4">
+        <div className="rounded-md outline-solid outline-gray-200 pl-2 mt-4 py-2">
             <p className="text-sm text-green-500">LOW</p>
             <p className="text-sm">feat: Add user authentication system</p>
             <p className="text-xs text-gray-500">student-portal - by alex-dev</p>
@@ -121,7 +121,7 @@ export default function Developer() {
             </div>
             
             <div className="border-t-2 border-gray-500 w-7/8 items-center my-2"></div>
-            <p className="text-xs text-gray-500">GitHub notification from notifications@github.com</p>
+            <p className="text-xs text-gray-500 mb-2">GitHub notification from notifications@github.com</p>
             <div className="flex gap-x-4">
                 <div className=" outline-solid outline-gray-200 flex rounded-md bg-white items-center px-2">
                 <FontAwesomeIcon icon={faFileExport} className="text-xs"/> 
@@ -166,9 +166,9 @@ export default function Developer() {
 
 
       </div>
-      <div className="bg-linear-to-bl from-gray-800 to-gray-900 rounded-lg p-4 text-white mb-4" >
-            <p className="text-lg text-semibold ">&lt;&gt; Beyond Code: Communication & Clarity</p>
-            <p > While countless developer tools focus on speeding up the act of writing code, our project addresses a later stage of the development lifecycle: communication and clarity.</p>
+      <div className="bg-linear-to-bl from-gray-800 to-gray-900 rounded-lg p-4 text-white mb-4 w-7/8 mx-auto" >
+            <p className="text-xl text-bold ">&lt;&gt; Beyond Code: Communication & Clarity</p>
+            <p className="text-center"> While countless developer tools focus on speeding up the act of writing code, our project addresses a later stage of the development lifecycle: communication and clarity.</p>
             <div className="flex gap-x-4 items-center justify-center mt-2">
             <div className="bg-gray-600 rounded-md py-2 px-4 text-white w-2/7" >
                 <p className="text-md">Auto-Translation</p>
