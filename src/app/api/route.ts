@@ -16,8 +16,8 @@ export async function GET() {
     });
 
     const result = await client.send(command);
-
-    return NextResponse.json(result.Items);
+    const items = result.Items?.map(item => item.data?.M || {});
+    return NextResponse.json(items);
   } catch (error) {
     console.error("DynamoDB error:", error);
     return NextResponse.json({ error: "Failed to fetch data" }, { status: 500 });
