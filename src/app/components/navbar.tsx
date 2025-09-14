@@ -1,11 +1,17 @@
 ﻿import { TextField, InputAdornment } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBell, faGear, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faBell, faGear, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";''
 
 export default function NavBar() {
     return (
         <div className="p-4 flex items-center gap-4 bg-gray-100">
-            <h1 className="text-xl font-bold">Klarity</h1>
+            <h1 className="text-3xl">
+                <span className="text-blue-500 font-bold text-4xl align-middle">K</span>
+                <span className="align-middle font-bold">larity</span>
+            </h1>
+
+
+
 
             <div className="flex-grow flex justify-center">
                 <TextField
