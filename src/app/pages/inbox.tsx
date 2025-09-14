@@ -30,17 +30,24 @@ export default function Inbox() {
       }
       const data = await response.json();
       // Transform the data to match our interface
-      const transformedData = data.map((item: Record<string, any>) => ({
-        category: item.category?.S || "none",
-        sender: item.sender?.S || "",
-        subject: item.subject?.S || "",
-        summary: item.summary?.S || "",
-        duedate: item.duedate?.S,
-        money: item.money?.N ? parseFloat(item.money.N) : undefined,
-        priority: item.priority?.S,
-        participants: item.participants?.N ? parseInt(item.participants.N) : undefined,
-        location: item.location?.S,
-      }));
+      const transformedData = data.map((item: Record<string, any>) => {
+        let category = item.category?.S || "none";
+        // Map "shopping" to "shopify" for consistency
+        if (category === "shopping") {
+          category = "shopify";
+        }
+        return {
+          category: category as "school" | "finance" | "shopify" | "work" | "personal" | "none",
+          sender: item.sender?.S || "",
+          subject: item.subject?.S || "",
+          summary: item.summary?.S || "",
+          duedate: item.duedate?.S,
+          money: item.money?.N ? parseFloat(item.money.N) : undefined,
+          priority: item.priority?.S,
+          participants: item.participants?.N ? parseInt(item.participants.N) : undefined,
+          location: item.location?.S,
+        };
+      });
       setEmailData(transformedData);
     } catch (err) {
       setError(err instanceof Error ? err.message : "An error occurred");

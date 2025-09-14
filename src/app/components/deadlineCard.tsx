@@ -11,7 +11,7 @@ type DeadlineCardProps = {
       school: "text-blue-600",
       work: "text-purple-600",
       deadline: "text-red-600",
-      shopping: "text-green-600",
+      shopify: "text-green-600",
     };
   
     const colorClass = colorMap[type] || "text-gray-500"; // fallback if type is unknown
