@@ -14,43 +14,40 @@ type EmailSummaryProps = {
 
   export default function EmailSummary({ title, tag, from, icon, note, dueDate, amount }: EmailSummaryProps) {
     return (
-        <div className="grid grid-rows-4 rounded-2xl bg-white m-4 border border-gray-200 shadow-none"> 
-      <div className=" grid grid-cols-7 mx-4 items-center">
-        <div className="flex col-span-5">
-        {icon && (
-            <div className=" flex items-center ">
-                {icon}
+        <div className="rounded-2xl bg-white m-2 border border-gray-200 shadow-none p-3 space-y-1"> 
+          <div className="flex items-center justify-between">
+            <div className="flex items-center">
+              {icon && (
+                <div className="flex items-center">
+                  {icon}
+                </div>
+              )}
+              <h1 className="text-md font-semibold ml-2">{title}</h1>
             </div>
-        )}
-
-        <h1 className=" text-md font-semibold flex items-center ml-2 ">{title}</h1>
-        </div>
-        <div
-  className={`col-start-6 flex items-center badge-soft badge
-    ${tag === "high" ? "badge-error" : ""}
-    ${tag === "medium" ? "badge-warning" : ""}
-    ${tag === "low" ? "badge-success" : ""}`}
->
-  {tag}
-    </div>        </div>
-            
-            <div className="row-start-2 flex items-center mx-4">From: {from}</div>
-            <div className="row-start-3 mx-4">{note}</div>
-            <div className="row-start-4 flex justify-between items-center mx-4">
-            {dueDate && (
-      <div className="flex items-center gap-2 ">
-        <FontAwesomeIcon icon={faClock} />
-        <p>Due: {dueDate}</p>
-      </div>
-    )}
-
-
-            {amount && <p>${amount}</p>}
-
+            <div
+              className={`badge-soft badge
+                ${tag === "high" ? "badge-error" : ""}
+                ${tag === "medium" ? "badge-warning" : ""}
+                ${tag === "low" ? "badge-success" : ""}`}
+            >
+              {tag}
             </div>
-
+          </div>
+          
+          <div className="text-sm text-gray-600">From: {from}</div>
+          <div className="text-sm">{note}</div>
+          
+          {(dueDate || amount) && (
+            <div className="flex justify-between items-center text-sm">
+              {dueDate && (
+                <div className="flex items-center gap-2">
+                  <FontAwesomeIcon icon={faClock} />
+                  <p>Due: {dueDate}</p>
+                </div>
+              )}
+              {amount && <p>${amount}</p>}
+            </div>
+          )}
         </div>
-
-
     );
   }
