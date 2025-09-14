@@ -78,9 +78,9 @@ export default function Calendar() {
 
   return (
     <>
-      <h1 className="text-2xl font-bold mb-2">Smart Shopping Dashboard</h1>
+      <h1 className="text-2xl font-bold mb-2">Calendar Dashboard</h1>
       <p className="text-gray-600 mb-6">
-        We bridge inbox + commerce, turning email receipts into a smart shopping dashboard. Track orders, deliveries, and connect to Shopify merchant dashboards automatically.
+      All your deadlines in one place - from tuition payments to PR reviews. Smart insights help you prioritize and plan across all aspects of student life.
       </p>
 
       {/* Main Content */}

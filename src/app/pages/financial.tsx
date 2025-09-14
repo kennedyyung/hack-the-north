@@ -142,8 +142,8 @@ export default function Financial() {
   }
 
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-2">Financial Clarity Dashboard</h1>
+    <>
+      <h1 className="text-2xl font-bold mb-2">Financial Dashboard</h1>
       <p className="text-gray-600 mb-6">
         Track your income, expenses, and get smart investment suggestions based on your email insights. Turn email chaos into financial opportunity with RBC InvestEase.
       </p>
@@ -234,6 +234,6 @@ export default function Financial() {
             </ResponsiveContainer>
           </div>
         )}
-      </div>
+    </>
   );
 } 
