@@ -36,7 +36,7 @@ export default function Shopping() {
         />
         <OverviewBox
           title="Total Sales"
-          value="$460.48"
+          value="$25,655"
           valueColour="text-green-500"
           note="Across all stores"
           noteColour="text-green-500"
@@ -85,7 +85,47 @@ export default function Shopping() {
             <FontAwesomeIcon icon={faShoppingCart} className="text-green-600 w-5 h-5" />
             <h2 className="text-green-700 font-semibold text-lg">Recent Orders</h2>
           </div>
-          <ShopifySummary title="Test" status="processing" orderNo="1202" items="keys, headphones, socks" ordered="2025-01-23" expected="2025-02-15" amount="246.05"/>
+          <ShopifySummary 
+  title="Wireless Headphones" 
+  status="processing" 
+  orderNo="12027" 
+  items="Wireless Headphones" 
+  ordered="2025-08-23" 
+  expected="2025-09-15" 
+  amount="246.05"
+/>
+
+<ShopifySummary 
+  title="Desk Accessories" 
+  status="shipped" 
+  orderNo="29325" 
+  items="Keychain, Keyholder" 
+  ordered="2025-01-23" 
+  expected="2025-02-05" 
+  amount="39.99"
+/>
+
+<ShopifySummary 
+  title="Socks Bundle" 
+  status="processing" 
+  orderNo="143102" 
+  items="Crew Socks, Elite Socks" 
+  ordered="2025-03-12" 
+  expected="2025-03-20" 
+  amount="29.50"
+/>
+
+<ShopifySummary 
+  title="Summer Outfit" 
+  status="delivered" 
+  orderNo="98025" 
+  items="Skirt, Shorts, Hat, Jeans" 
+  ordered="2025-04-05" 
+  expected="2025-04-15" 
+  amount="154.75"
+/>
+
+
         </div>
 
         {/* Store Integrations Section */}
@@ -94,11 +134,37 @@ export default function Shopping() {
             <FontAwesomeIcon icon={faStore} className="text-green-600 w-5 h-5" />
             <h2 className="text-green-700 font-semibold text-lg">Store Integrations</h2>
           </div>
-<StoreIntegration title="Testing name" orders="10" website="Testing website" revenue="200" connected="connected" />
-<StoreIntegration title="Testing name" orders="2" website="Testing website" revenue="150.15" connected="not connected"/>
-<StoreIntegration title="Testing name" orders="2" website="Testing website" revenue="150.15" connected="not connected"/>
-<StoreIntegration title="Testing name" orders="2" website="Testing website" revenue="150.15" connected="not connected"/>
-<StoreIntegration title="Testing name" orders="2" website="Testing website" revenue="150.15" connected="not connected"/>
+          <StoreIntegration 
+  title="Urban Outfitters" 
+  orders="120" 
+  website="urbanoutfitters.com" 
+  revenue="12500.75" 
+  connected="connected" 
+/>
+
+<StoreIntegration 
+  title="Tech Haven" 
+  orders="45" 
+  website="techhaven.io" 
+  revenue="8650.40" 
+  connected="connected" 
+/>
+
+<StoreIntegration 
+  title="Fashion Finds" 
+  orders="12" 
+  website="fashionfinds.net" 
+  revenue="1520.10" 
+  connected="not connected" 
+/>
+
+<StoreIntegration 
+  title="Home Essentials" 
+  orders="30" 
+  website="homeessentials.store" 
+  revenue="2985.50" 
+  connected="not connected" 
+/>
 
          
 
