@@ -89,6 +89,8 @@ export default function Financial() {
 
 
   // ✅ Simulate all client portfolios
+  type Strategy = "balanced" | "aggressive_growth";
+
   async function handleSimulateClient() {
     try {
       const token = localStorage.getItem("rbc_token");
@@ -101,9 +103,11 @@ export default function Financial() {
       // Combine both portfolios into single array
       const combined: { [date: string]: { balanced?: number; aggressive_growth?: number } } = {};
 
-      result.results.forEach((p: any) => {
+      result.results.forEach((p: { strategy: Strategy; growth_trend: any[] }) => {
         p.growth_trend.forEach((point: any) => {
           if (!combined[point.date]) combined[point.date] = {};
+
+          // Now TypeScript knows strategy is safe
           combined[point.date][p.strategy] = point.value;
         });
       });
@@ -120,6 +124,7 @@ export default function Financial() {
       setStatus(`❌ ${err.message}`);
     }
   }
+
 
   // ✅ Delete all clients
   async function handleDeleteAllClients() {
