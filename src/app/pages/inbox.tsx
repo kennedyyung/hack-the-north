@@ -15,7 +15,7 @@ export default function Inbox() {
           <div className="bg-white border border-gray-300 rounded-md ">
             <div className="flex items-center ml-4 mr-2 mt-4">
                 <FontAwesomeIcon icon={faDollarSign}  className="text-blue-500"/>
-              <p>Finance</p>
+              <p className="ml-2 text-blue-500 ">Finance</p>
             </div>
 
 
