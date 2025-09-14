@@ -2,20 +2,12 @@
 // import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
+import { WebSocketProvider } from '../contexts/WebSocketContext';
+import WebSocketStatus from '../components/WebSocketStatus';
 
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -31,7 +23,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
       <AppRouterCacheProvider options={{ enableCssLayer: true }}>
-        {children}
+        <WebSocketProvider enableNotifications={true}>
+          {children}
+          <WebSocketStatus />
+        </WebSocketProvider>
       </AppRouterCacheProvider>
       </body>
     </html>

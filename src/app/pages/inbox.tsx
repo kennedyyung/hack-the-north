@@ -22,39 +22,38 @@ export default function Inbox() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    const fetchEmails = async () => {
-      try {
-        const response = await fetch("/api");
-        if (!response.ok) {
-          throw new Error("Failed to fetch emails");
-        }
-        const data = await response.json();
-        // Transform the data to match our interface
-        const transformedData = data.map((item: Record<string, any>) => ({
-          category: item.category?.S || "none",
-          sender: item.sender?.S || "",
-          subject: item.subject?.S || "",
-          summary: item.summary?.S || "",
-          duedate: item.duedate?.S,
-          money: item.money?.N ? parseFloat(item.money.N) : undefined,
-          priority: item.priority?.S,
-          participants: item.participants?.N ? parseInt(item.participants.N) : undefined,
-          location: item.location?.S,
-        }));
-        console.log("Transformed data length:", transformedData.length);
-        console.log("Categories:", transformedData.map(e => e.category));
-        setEmailData(transformedData);
-      } catch (err) {
-        setError(err instanceof Error ? err.message : "An error occurred");
-        console.error(err);
-      } finally {
-        setLoading(false);
+  const fetchEmails = async () => {
+    try {
+      const response = await fetch("/api");
+      if (!response.ok) {
+        throw new Error("Failed to fetch emails");
       }
-    };
+      const data = await response.json();
+      // Transform the data to match our interface
+      const transformedData = data.map((item: Record<string, any>) => ({
+        category: item.category?.S || "none",
+        sender: item.sender?.S || "",
+        subject: item.subject?.S || "",
+        summary: item.summary?.S || "",
+        duedate: item.duedate?.S,
+        money: item.money?.N ? parseFloat(item.money.N) : undefined,
+        priority: item.priority?.S,
+        participants: item.participants?.N ? parseInt(item.participants.N) : undefined,
+        location: item.location?.S,
+      }));
+      setEmailData(transformedData);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "An error occurred");
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  useEffect(() => {
     fetchEmails();
   }, []);
+
 
   if (loading) {
     return (

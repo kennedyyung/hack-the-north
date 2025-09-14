@@ -28,35 +28,36 @@ export default function Calendar() {
   const [loading, setLoading] = useState(true);
   const [popupData, setPopupData] = useState<{ event: CalendarEvent; position: { x: number; y: number } } | null>(null);
 
-  useEffect(() => {
-    const fetchEmails = async () => {
-      try {
-        const response = await fetch("/api");
-        if (!response.ok) {
-          throw new Error("Failed to fetch emails");
-        }
-        const data = await response.json();
-        const transformedData = data.map((item: Record<string, { S?: string; N?: string }>) => ({
-          category: item.category?.S || "none",
-          sender: item.sender?.S || "",
-          subject: item.subject?.S || "",
-          summary: item.summary?.S || "",
-          duedate: item.duedate?.S,
-          money: item.money?.N ? parseFloat(item.money.N) : undefined,
-          priority: item.priority?.S,
-          participants: item.participants?.N ? parseInt(item.participants.N) : undefined,
-          location: item.location?.S,
-        }));
-        setEmailData(transformedData);
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setLoading(false);
+  const fetchEmails = async () => {
+    try {
+      const response = await fetch("/api");
+      if (!response.ok) {
+        throw new Error("Failed to fetch emails");
       }
-    };
+      const data = await response.json();
+      const transformedData = data.map((item: Record<string, { S?: string; N?: string }>) => ({
+        category: item.category?.S || "none",
+        sender: item.sender?.S || "",
+        subject: item.subject?.S || "",
+        summary: item.summary?.S || "",
+        duedate: item.duedate?.S,
+        money: item.money?.N ? parseFloat(item.money.N) : undefined,
+        priority: item.priority?.S,
+        participants: item.participants?.N ? parseInt(item.participants.N) : undefined,
+        location: item.location?.S,
+      }));
+      setEmailData(transformedData);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  useEffect(() => {
     fetchEmails();
   }, []);
+
 
   // Transform email data with due dates into calendar events
   const events: CalendarEvent[] = useMemo(() => {

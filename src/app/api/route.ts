@@ -17,11 +17,6 @@ export async function GET() {
 
     const result = await client.send(command);
     const items = result.Items?.map(item => item.data?.M || {});
-    console.log("Raw DynamoDB items:", result.Items?.length);
-    console.log("Processed items:", items?.length);
-    for (const item of items || []) {
-      console.log("Item:", item.subject?.S, item.category?.S);
-    }
     return NextResponse.json(items);
   } catch (error) {
     console.error("DynamoDB error:", error);
