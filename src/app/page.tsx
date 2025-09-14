@@ -10,6 +10,8 @@ import Financial from "./pages/financial";
 import Shopping from "./pages/shopping";
 import Developer from "./pages/developer";
 import Personal from "./pages/personal";
+import BottomBanner from "./components/bottomBanner";
+
 export default function Home() {
   const [activePage, setActivePage] = useState<string>("Inbox");
   return (
@@ -24,8 +26,9 @@ export default function Home() {
 {activePage === "Calendar" && <Calendar />}
 {activePage === "Financial" && <Financial />}
 {activePage === "Personal" && <Personal />}
-{activePage === "Shopping" && <Shopping />}
+{activePage === "Shopify" && <Shopping />}
 {activePage === "Developer" && <Developer />}
+<BottomBanner/>
   </div>
 
 </div>

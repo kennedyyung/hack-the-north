@@ -4,7 +4,7 @@ export default function Legend() {
     { type: 'school', label: 'School', color: 'bg-purple-500' },
     { type: 'personal', label: 'Personal', color: 'bg-pink-500' },
     { type: 'deadline', label: 'Deadline', color: 'bg-red-500' },
-    { type: 'shopping', label: 'Shopping', color: 'bg-green-500' },
+    { type: 'shopify', label: 'Shopify', color: 'bg-green-500' },
     { type: 'family', label: 'Family', color: 'bg-yellow-500' },
   ];
 

@@ -28,7 +28,7 @@ export default function UpcomingDeadlines({ events = [] }: UpcomingDeadlinesProp
       school: "bg-blue-500",
       personal: "bg-pink-500",
       deadline: "bg-red-500",
-      shopping: "bg-green-500",
+      shopify: "bg-green-500",
       family: "bg-yellow-500",
     };
     return colorMap[type] || "bg-gray-500";

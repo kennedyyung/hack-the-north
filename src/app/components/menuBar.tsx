@@ -8,7 +8,7 @@ type MenuBarProps = {
 export default function MenuBar({ onSelectPage }: MenuBarProps) {
   const [selectedPage, setSelectedPage] = useState("Inbox");
 
-  const pages = ["Inbox", "Calendar", "Financial", "Personal", "Shopping", "Developer"];
+  const pages = ["Inbox", "Calendar", "Financial", "Personal", "Shopify", "Developer"];
 
   const handleClick = (page: string) => {
     setSelectedPage(page);
