@@ -317,10 +317,10 @@ export default function Financial() {
         <div className="bg-blue-50 rounded-lg p-4">
           <p className="mb-4">
             <span className="text-yellow-500 mr-2">💡</span>
-            You'll have <span className="font-semibold">$200.5 surplus this month</span>
+            You will have <span className="font-semibold">$200.5 surplus this month</span>
           </p>
           <p className="text-gray-600 mb-4">
-            Based on your email analysis, we've detected upcoming income from internships and scholarships. Want to invest $140.35 in RBC InvestEase toward your Study Abroad Trip goal?
+            Based on your email analysis, we have detected upcoming income from internships and scholarships. Want to invest $140.35 in RBC InvestEase toward your Study Abroad Trip goal?
           </p>
           <div className="flex gap-4">
             <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700" style={{ backgroundColor: "#005DAA" }}>
