@@ -31,7 +31,7 @@ export default function Shopping() {
           note="Processing or shipped"
           noteColour="text-yellow-500"
           iconColour="text-yellow-500"
-          iconBackgroundColour="bg-yellow-100"
+          iconBackgroundColour="bg-yellow-200"
           icon={<FontAwesomeIcon icon={faTruck} />}
         />
         <OverviewBox
