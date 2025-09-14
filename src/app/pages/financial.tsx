@@ -89,6 +89,8 @@ export default function Financial() {
 
 
   // ✅ Simulate all client portfolios
+  type Strategy = "balanced" | "aggressive_growth";
+
   async function handleSimulateClient() {
     try {
       const token = localStorage.getItem("rbc_token");
@@ -101,14 +103,13 @@ export default function Financial() {
       // Combine both portfolios into single array
       const combined: { [date: string]: { balanced?: number; aggressive_growth?: number } } = {};
 
-      result.results.forEach((p: any) => {
+      result.results.forEach((p: { strategy: Strategy; growth_trend: any[] }) => {
         p.growth_trend.forEach((point: any) => {
           if (!combined[point.date]) combined[point.date] = {};
-          if (p.strategy == "balanced") {
-            combined[point.date].balanced = point.value;
-          } else {
-            combined[point.date].aggressive_growth = point.value;
-          }
+
+          // Now TypeScript knows strategy is safe
+          combined[point.date][p.strategy] = point.value;
+
         });
       });
 
@@ -124,6 +125,7 @@ export default function Financial() {
       setStatus(`❌ ${err.message}`);
     }
   }
+
 
   // ✅ Delete all clients
   async function handleDeleteAllClients() {
@@ -142,8 +144,8 @@ export default function Financial() {
   }
 
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-2">Financial Clarity Dashboard</h1>
+    <>
+      <h1 className="text-2xl font-bold mb-2">Financial Dashboard</h1>
       <p className="text-gray-600 mb-6">
         Track your income, expenses, and get smart investment suggestions based on your email insights. Turn email chaos into financial opportunity with RBC InvestEase.
       </p>
@@ -234,6 +236,6 @@ export default function Financial() {
             </ResponsiveContainer>
           </div>
         )}
-      </div>
+    </>
   );
 } 
